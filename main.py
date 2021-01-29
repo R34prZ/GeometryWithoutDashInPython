@@ -1,4 +1,3 @@
-from typing import Dict, final
 import pygame
 from pygame.locals import *
 import sys
