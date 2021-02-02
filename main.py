@@ -3,7 +3,6 @@ from pygame.locals import *
 import sys
 import random
 import time
-#from time import sleep
 
 pygame.init()
 pygame.display.set_caption('GeometryWithoutAnyDash')
@@ -73,7 +72,6 @@ def move(rect, movement, tiles):
 moving_right = False
 moving_left = False
 
-
 def main():
     player_y_momentum = 0
     air_timer =0
@@ -86,7 +84,6 @@ def main():
         final_time = time.time()
         delta_time = (final_time - start_time)
         start_time = final_time
-        print(f'delta time is: {delta_time}')
 
         # draw
         DISPLAY.fill((40, 100, 190))
@@ -104,8 +101,9 @@ def main():
                     pygame.draw.rect(DISPLAY, (0, 0, 255), spike_rect, 5)
                     DISPLAY.blit(spike_img, (x * tile_size, y * tile_size))
                     if player_rect.colliderect(spike_rect):
+                        print('collide')
                         menu()
-                        print('Opora bati no espinho ai ai ai')
+
                 if tile != '0':
                     tile_rects.append(pygame.Rect(x * tile_size, y * tile_size, tile_size, tile_size))
                 x += 1
